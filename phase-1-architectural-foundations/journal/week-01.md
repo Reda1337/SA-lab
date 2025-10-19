@@ -24,7 +24,7 @@ Every functional enjoyer should look for these three important aspects in code i
 1.1 Actions
 
 What do we mean by actions? Well, they are anything that gets affected by or affects something outside
-their scope. They depend on the timeline — each time you use an action its value or side effect
+their scope. They depend on the timeline, each time you use an action its value or side effect
 may be different from before. For example:
 
 ```js
@@ -35,12 +35,12 @@ getCurrentTime()
 Actions spread. If you use an action inside a "normal" function then that function becomes an
 action. And if you call that function inside another function, that one becomes an action too.
 
-Ps: by "normal function" I mean calculation — we'll talk about it in the next point.
+Ps: by "normal function" I mean calculation, we'll talk about it in the next point.
 
 1.2 Calculations
 
 Calculations are computations from inputs to outputs. In other words, a function that has inputs
-and returns outputs — but the catch is it always returns the same output for the same inputs.
+and returns outputs, but the catch is it always returns the same output for the same inputs.
 For example:
 
 ```js
@@ -69,7 +69,7 @@ your code becomes.
 Within a single function there are two ways for data to be used (inputs) and two ways to return data
 (outputs). How you pass or return data plays a big role in making that function an action or a calculation.
 
- - Explicit inputs: Arguments — the ones you pass to the function.
+ - Explicit inputs: Arguments, the ones you pass to the function.
 
    Example:
    ```js
@@ -86,7 +86,7 @@ Within a single function there are two ways for data to be used (inputs) and two
    }
    ```
 
- - Explicit outputs: Return values — anything you explicitly return from the function.
+ - Explicit outputs: Return values, anything you explicitly return from the function.
 
    Example:
    ```js
@@ -104,7 +104,7 @@ Within a single function there are two ways for data to be used (inputs) and two
    }
    ```
 
-Functional programmers call implicit inputs and outputs "side effects" — they aren't part of the
+Functional programmers call implicit inputs and outputs "side effects", they aren't part of the
 main purpose of the function (which is to calculate and return a value).
 
 ### 4. Steps to extract a calculation from an action
@@ -116,19 +116,19 @@ To extract a calculation, a general process is:
 2. Identify the implicit inputs and outputs inside the refactored function.
 3. Convert implicit inputs into arguments and implicit outputs into return values.
 
-Ps: To make return values explicit there are many techniques like "COPY ON WRITE" — we'll see it in
+Ps: To make return values explicit there are many techniques like "COPY ON WRITE", we'll see it in
 the next concept.
 
 ### 5. Different methods to handle implicit outputs
 
 There are different ways to handle implicit outputs and make them explicit. One common method is:
 
-COPY ON WRITE — copy the mutable value before modifying it. This helps implement immutability and
+COPY ON WRITE, copy the mutable value before modifying it. This helps implement immutability and
 ensures the function won't cause side effects outside its scope.
 
 Example:
 
------- BEFORE COPY ON WRITE --------
+------- BEFORE COPY ON WRITE --------
 
 ```js
 function addItemToCart(name, price) {
@@ -141,7 +141,7 @@ function add_item(cart, name, price) {
 }
 ```
 
------- AFTER COPY ON WRITE --------
+------- AFTER COPY ON WRITE --------
 
 ```js
 function addItemToCart(name, price) {
@@ -170,7 +170,7 @@ Making copies of data structures to preserve immutability may seem costly in ter
 and memory. But modern techniques like structural sharing and persistent data structures let us
 avoid full copies most of the time.
 
-Also, garbage collectors are fast and optimized — in many cases you won't notice a significant
+Also, garbage collectors are fast and optimized, in many cases you won't notice a significant
 performance hit from copying data.
 
 Structural sharing is where new versions of data structures share parts of the old versions that
@@ -179,7 +179,7 @@ structure with the old one. When data is immutable, structural sharing is safe.
 
 ### 8. Concerns about refactoring untrusted code
 
-Using or modifying code you don't trust is a concern — what if it mutates your data or causes
+Using or modifying code you don't trust is a concern, what if it mutates your data or causes
 unexpected side effects?
 
 To keep your code safe and immutable, use "Defensive Copying". It's the best simple solution when
@@ -187,15 +187,15 @@ interacting with untrusted code.
 
 Rules:
 
- - Rule 1 — Copy as data leaves your code:
+ - Rule 1, Copy as data leaves your code:
    1. Make a deep copy of the immutable data.
    2. Pass the copy to the untrusted code.
 
- - Rule 2 — Copy as data enters your code:
+ - Rule 2, Copy as data enters your code:
    1. Immediately make a deep copy of mutable data passed into your code.
    2. Use the copy inside your code.
 
-It sounds simple — and that's literally all you need to interact with code you can't trust with
+It sounds simple, and that's literally all you need to interact with code you can't trust with
 your data immutability.
 
 Ps: Deep copies are certainly more expensive than shallow copies, so use them cautiously.
@@ -222,11 +222,11 @@ align with React and how React is built around functional programming principles
  - Design is about untangling the threads that make the mess and splitting them into parts that
    can be composed to solve the problem.
  - The more functions follow single responsibility, the easier they are to reuse.
- - Copy on write ensures our data stays immutable — modify the copy instead of the original.
+ - Copy on write ensures our data stays immutable, modify the copy instead of the original.
  - Shallow copy: copy only the top-level structure in nested data.
  - Structural sharing: nested data structures reference the same inner data when unchanged.
  - Defensive copying: make deep copies when data leaves or enters your trusted code.
- - Defensive copying requires deep copies and can be expensive — keep that in mind.
+ - Defensive copying requires deep copies and can be expensive, keep that in mind.
 
 
 
