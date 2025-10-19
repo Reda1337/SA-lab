@@ -1,8 +1,13 @@
 # Week 1: Functional programming
 ## Study Context
-**Phase:** Architectural Foundations  
+
+**Phase:** Architectural Foundations 
+
 **Focus Area:** Functional Design
-**Book/Source:** Grokking Simplicity: Taming Complex Software with Functional Thinking
+
+**Book/Source:** Grokking Simplicity: Taming Complex Software
+  with Functional Thinking
+
 **Chapters Covered:** 1 -> 7
 
 
