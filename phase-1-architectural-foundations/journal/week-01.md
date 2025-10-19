@@ -1,6 +1,4 @@
-or what if it can cause some mutability or side effect you don't want?
-Week 1: Functional programming
-
+# Week 1: Functional programming
 ## Study Context
 **Phase:** Architectural Foundations  
 **Focus Area:** Functional Design
