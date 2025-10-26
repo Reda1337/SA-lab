@@ -6,6 +6,6 @@ This phase covers the foundational concepts of software architecture, focusing o
 In this part, we explore different architectural paradigms by implementing a simple task management application in multiple styles. Each implementation demonstrates the core principles and trade-offs of the respective paradigm. The paradigms covered include:
 - Functional Programming
 - Object-Oriented Programming
-- Event-Driven Architecture
+- Data Driven Architecture
 
 Each implementation is contained within its own directory, allowing for easy comparison and analysis of the different approaches. The focus is on understanding how each paradigm handles state management, data flow, and modularity.
