@@ -7,7 +7,7 @@
 
 **Book/Source:** Grokking Simplicity: Taming Complex Software with Functional Thinking
 
-**Chapters Covered:** 8–9
+**Chapters Covered:** 8–15
 
 ## Key Concepts Learned
 
@@ -119,7 +119,7 @@ when to stop.
   related intents.
   - The interfaces for important business concepts should not grow or change once they have matured.
 
-## 2. Mini Project - Applying What I Learned
+## 2. Mini Project - Applying What I Learned in the chapters after Stratified Design
 
 ### What I built
 
