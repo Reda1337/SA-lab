@@ -134,8 +134,3 @@ I implemented a task scheduler in the functional-version folder and added unit t
   - stratified design: high-level scheduler functions compose lower-level helpers without leaking implementation details.
   - immutable updates and predictable, testable behavior.
   - clear tests that exercise both the scheduler core and the domain helpers.
-- highlights:
-  - stratified design: high-level scheduler functions compose lower-level helpers without leaking implementation details.
-  - immutable updates and predictable, testable behavior.
-  - clear tests that exercise both the scheduler core and the domain helpers.
-
